@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KelvinAndCelcius</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    * {
+        font-weight: 600;
+        user-select: none;
+    }
+    #view {
+        position: relative;
+        top: 4px;
+        left: 204px;
+        padding: 8px 24px 9px 20px;
+        font-weight: 600;
+        color:#000000;
+        font-size: 16px;
+    }
+    input,label {
+        position: relative;
+        right: 100px;
+        top: 37px;
+    }
+    center {
+        margin-top: 115px;
+    }
+    #demo {
+        color: green;
+        position: relative;
+        top: 6px;
+    }
+    span {
+        position: relative;
+        top: 3px;
+        right: 80px;
+    }
+    #des {
+        position: relative;
+        right: 24px;
+        font-weight: 400;
+        font-size: 17px;
+    }
+
+    </style>
+</head>
+<body>
+    <center>
+    <div style="display: inline-block;width: 47%;background: gainsboro;height: 115px;">
+        <span>Applet</span>
+        <input type="number" id="fk">
+        <input type="radio" id="ag1" name="Cel">
+        <label for="ag1">to Celcius</label>
+        <input type="radio" id="ag2" name="Cel">
+        <label for="ag2">to Kelvin</label><br>  
+        <button id="view" onclick="show()">Show Result</button>
+        <p id="des" style="position: relative;right: 12px;font-weight: 400;">Enter Ferenheit, Choose an option to convert and click Show Result</p>
+        
+        <p id="demo"></p>
+    </div>
+    <!-- <button onclick="haha()">ADADA</button> -->
+</center>
+
+</body>
+<script>
+    // function cl(){
+    //     document.getElementById("demo").innerText=""
+    // }
+        function show(){
+            if(document.getElementById('ag1').checked) { 
+                var far = document.getElementById("fk").value;
+                var calcu = (far-32)*5/9
+                var f= document.getElementById("demo").innerText="Celcius value is: "+calcu.toFixed(2);
+                console.log(calcu.toFixed(2))
+                var far = document.getElementById("fk").value=""
+                document.getElementById('ag1').checked=false
+            } 
+            else if(document.getElementById('ag2').checked) { 
+                var far = document.getElementById("fk").value;
+                var calcu = (far-32)*5/9+273.15
+                var f= document.getElementById("demo").innerText="Kelvin value is: "+calcu.toFixed(2);
+                console.log(calcu.toFixed(2))
+                var far = document.getElementById("fk").value=""
+                document.getElementById('ag2').checked=false
+            } 
+            else if (document.getElementById("fk").value==""){
+                alert("PLEASE ENTER FERENHEIT")
+            }
+            else {
+                alert("PLEASE CHOOSE CELCIUS OR KELVIN")
+            }
+        }    
+</script>
+
+</html>
+
+
+
+
+
+        
+<!-- //(f-32)*5/9=c
+        
+    
+// function show() {
+//     var far = document.getElementById("fk");
+//    var f= document.getElementById("demo").innerHTML=far.value;
+//    var calcu = (f-32)*5/9
+//     console.log(calcu)
+// }  
+//     function haha(){
+//         alert("woerk")
+//     if(document.getElementById('ag1').checked){
+//         alert("hello")
+//         console.log("hello")
+//     }
+//     else if(document.getElementById('ag2').checked) {
+//         alert("done")
+//     }
+// } -->
+<!-- //     var ag  = document.getElementById("ag1")
+//    ag.addEventListener("click",function(){
+//    document.getElementById("show").addEventListener("click",show)
+//      function show(){
+//         var far = document.getElementById("fk").value;
+//         var calcu = (far-32)*5/9+273.15
+//         var f= document.getElementById("demo").innerText=calcu;
+//         console.log(calcu)
+//      }
+        
+    
+// }) -->
